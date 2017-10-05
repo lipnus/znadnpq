@@ -1,0 +1,55 @@
+<body>
+
+<div class="row columns" *ngIf="(user | async)?.uid">
+
+  <div>
+    <div> <h2>{{menuInfo.menu_name}} Review</h2> </div>
+
+    <div class="menuinfo">
+      Category: {{menuInfo.menu_category}} <br>
+      식당Key: {{menuInfo.res_id}} <br>
+      메뉴Key: {{menuInfo.key}} <br>
+    </div>
+  </div>
+
+
+  <div class="review-container" *ngFor="let item of rList; let i = index"  >
+
+    <!--리뷰-->
+    <div class="review-box">
+      <button class ="menu-btn" tabindex="-1" (click)="deleteReview( i )" >DEL</button>
+      <div class="review-box-img"><img class="review_img" src="{{item.review_image}}"/></div>
+
+      <div class ="review-box-data">
+        key: {{item.key}} / uid: {{item.uid}} / taste: {{item.taste}}
+        <br><br>
+        {{item.memo}}<br>
+      </div>
+    </div>
+
+    <!--댓글-->
+    <div class="comment-container" *ngFor="let commentItem of rList[i].comment; let j = index">
+      <div class = "comment-box">
+        <button class ="comment-btn" tabindex="-1" (click)="deleteComment( i, j )" >DEL</button>
+         key: {{commentItem.key}} / uid: {{commentItem.uid}}
+        <br>
+        {{commentItem.comment_text}}
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+  <div id="btn-box" *ngIf="(user | async)?.uid">
+    <button id="btn-cancel" (click)="cancel()">Back</button>
+    <a [routerLink]="[ '/menulist', resName  ]"></a>
+  </div>
+
+<!--<button (click)="inputData()">더미데이터 넣기</button>-->
+
+</div>
+</body>

@@ -1,0 +1,89 @@
+/*전체*/
+body {
+  margin: 7em;
+  padding-left: 60px;
+  background-color:#EBEBEB;
+}
+
+#title{
+  margin-bottom: 80px;
+}
+
+* {
+  font-family: 'Raleway';
+}
+
+#btn-confirm {
+  background:#4267B2;
+  color:white;
+  padding: 1.2em;
+  width:300px;
+  text-align:center;
+  font-size:1.2em;
+  margin-bottom: 30px;
+  cursor:pointer;
+}
+
+#foot{
+  padding-left: 1.2em;
+  color: slategray;
+}
+
+.btn {
+  background:#565559;
+  margin-right: 15px;
+  color:white;
+  padding: 1.2em;
+  margin-bottom: 10px;
+  width:250px;
+  text-align:center;
+  font-size:1.2em;
+  cursor:pointer;
+}
+
+.table{
+  margin-top: 50px;
+  font-size: 0.6em;
+}
+
+input {
+  display: block;
+  background:#fff;
+  width: 500px;
+  border:none;
+  outline:none;
+  box-shadow:none;
+  font-size:1.6em;
+  font-weight:300;
+  padding:1.2em .7em;
+}
+
+.menuinfo {
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+
+#category-text{
+  margin-top: 25px;
+}
+
+#btn-box{
+  margin-top: 80px;
+  text-align:center;
+}
+
+.review-box {
+  background:#323035;
+  height: 60px;
+  padding:10px;
+  color:white;
+}
+
+
+
+
+
+
+
+
+

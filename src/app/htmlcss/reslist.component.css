@@ -1,0 +1,109 @@
+
+* {
+  font-family: 'Raleway';
+  background-color:#EBEBEB;
+}
+
+body {
+  padding: 3em;
+}
+
+button {
+  cursor:pointer;
+}
+
+.top-btn{
+  margin-left: 30px;
+}
+
+.btn-enroll {
+  float: left;
+  background:#565559;
+  color:white;
+  padding: 1.05em;
+  width:300px;
+  text-align:center;
+  font-size:1.2em;
+  margin-bottom: 3em;
+  margin-left: 5px;
+  cursor:pointer;
+}
+
+input {
+  float: left;
+  background:#fff;
+  width: 60%;
+  border:none;
+  outline:none;
+  box-shadow:none;
+  font-size:1.6em;
+  font-weight:300;
+  padding:1.2em .7em;
+}
+
+#topbox{
+  margin-bottom: 20px;
+}
+
+
+
+#row columnstopbox{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+#details-container {
+  margin-top: 80px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  width:100%;
+}
+
+.res-title{
+  float:left;
+  background:#fff;
+  color: slategray;
+  font-size:1em;
+  /*width:auto;*/
+  /*min-width:180px;*/
+  width: 180px;
+}
+
+#deleteRes {
+  background:#fff;
+  font-size:0.7em;
+  color:	slategray;
+}
+
+.testBtn {
+  margin-left: 50px;
+}
+
+.whiteBox {
+   background:#fff;
+   padding:1.4em;
+   margin: 12px;
+   width:auto;
+   min-width:130px;
+ }
+
+.innerWhiteBox_left {
+  background:#fff;
+  margin: 10px;
+}
+
+#deleteBox {
+  background:#fff;
+  width: 70px;
+  cursor:pointer;
+}
+
+img {
+  background:#fff;
+}
+
+#menuListFoot{
+  color:	#576e75;
+}

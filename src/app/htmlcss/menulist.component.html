@@ -1,0 +1,47 @@
+<body>
+
+<div class="row columns" *ngIf="(user | async)?.uid">
+
+  <div>
+
+    <div> <h2>{{resInfo.res_name}}</h2> </div>
+
+    <div class="menuinfo">
+      Location: {{resInfo.location}} <br>
+      Key: {{resInfo.key}}
+    </div>
+
+  </div>
+
+  <!--<input type="text" id="message"  placeholder="카테고리 추가"  (change)="chatSend($event.target.value)" [(ngModel)]="msgVal" />-->
+  <!--<a href="#">{{item.res_name}}</a>-->
+
+  <div class="review-container" *ngFor="let item of mList; let i = index"  >
+
+    <div id="category-text"*ngIf="lineCheck(i)" >{{item.menu_category}}</div>
+
+    <div class="review-box">
+      <div class="menu-count" >{{i+1}}</div>
+      <input class="menu-input-title"  type="text" placeholder="menu_name"  (keydown.enter)="addMenu(i)" [(ngModel)]="item.menu_name" />
+      <input class="menu-input" type="text" placeholder="price1" (keydown.tab)="tabCheck(i)" (keydown.enter)="addMenu(i)" [(ngModel)]="item.price1"/>
+      <input class="menu-input" tabindex="-1" type="text" placeholder="price2" (keydown.enter)="addMenu(i)" [(ngModel)]="item.price2"/>
+      <input class="menu-input" tabindex="-1" type="text" placeholder="price3" (keydown.enter)="addMenu(i)" [(ngModel)]="item.price3"/>
+      <input class="menu-input-category" tabindex="-1" type="text" placeholder="res_category" (keydown.enter)="addMenu(i)" [(ngModel)]="item.menu_category"/>
+      <button class ="menu-btn" tabindex="-1" (click)="deleteMenu(i)" >DEL</button>
+      <button class ="menu-btn" tabindex="-1" (click)="addMenu(i)">ADD</button>
+
+      <a *ngIf="mList[i].review_id != null" [routerLink]="[ '/reviewlist',item.key ]"><button  class ="menu-btn" tabindex="-1">R</button></a>
+
+    </div>
+
+  </div>
+
+</div>
+
+  <div id="btn-box" *ngIf="(user | async)?.uid">
+    <button id="btn-confirm" (click)= "updateMenu()">Save</button>
+    <button id="btn-cancel" (click)= "cancel()" tabindex="-1">Cancel</button>
+  </div>
+
+<!--<button (click)="inputData()">더미데이터 넣기</button>-->
+</body>

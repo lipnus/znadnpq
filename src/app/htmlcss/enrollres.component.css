@@ -1,0 +1,53 @@
+body {
+  background-color:#EBEBEB;
+  /*padding: 6em;*/
+}
+
+
+/*가장 위쪽의 제목*/
+.page-header{
+  outline-color: black;
+  margin-bottom: 50px;
+}
+
+
+.chk_box{
+  margin-left: 10px;
+}
+
+/*가로한칸*/
+div.form-group{
+  backgroud-color:#000;
+  margin-bottom: 30px;
+}
+
+
+.enrollNo{
+  color: red;
+}
+
+.enrollOk{
+  color: green;
+}
+
+.btn-ok {
+  background:#2a4f99;
+  color:white;
+  padding: 1.2em;
+  width:300px;
+  text-align:center;
+  font-size:1.2em;
+  margin-bottom: 30px;
+  cursor:pointer;
+}
+
+.btn-cancel {
+  background:#565559;
+  color:white;
+  padding: 1.2em;
+  width:300px;
+  text-align:center;
+  font-size:1.2em;
+  margin-bottom: 30px;
+  cursor:pointer;
+}

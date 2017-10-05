@@ -1,0 +1,64 @@
+<body>
+
+  <div>
+    <h1 id="title">서버이전 명령어 (클릭금지)</h1>
+  </div>
+
+
+  <button class="btn" (click)="res_download()">식당 가져오기</button>
+  <button class="btn" (click)="res_upload()">식당 업로드</button>
+
+  <button class="btn" (click)="menu_download()">메뉴 가져오기</button>
+  <button class="btn" (click)="menu_upload_start()">메뉴 업로드(menu_info)</button>
+  <button class="btn" (click)="menu_upload_start2()">메뉴 업로드(res_info)</button>
+
+  <button class="btn" (click)="pakage_download()">패키지 가져오기</button>
+  <button class="btn" (click)="pakage_upload1()">패키지 업로드1</button>
+  <button class="btn" (click)="pakage_upload2()">패키지 업로드2</button>
+  <button class="btn" (click)="user_download()">유저 다운/업로드</button>
+
+  <button class="btn" (click)="imgonly_download()">쿰척이 생성</button>
+
+
+  <!--<button class="btn" (click)="review_download()">리뷰 가져오기</button>-->
+  <!--<button class="btn" (click)="review_upload()">리뷰 업로드</button>-->
+
+
+  <button class="btn" (click)="review_delete()">패키지 삭제</button>
+  <button class="btn" (click)="db_delete()">DB삭제</button>
+  <button class="btn" (click)="test()">테스트</button>
+
+  <br><br>
+  <a [routerLink]="['/reslist']"><button class="btn">뒤로가기</button></a>
+
+
+  <!--<span>-->
+    <!--{{newResInfo[0].res_theme[0]}}-->
+    <!--{{newResInfo[0].res_theme[1]}}-->
+  <!--</span>-->
+
+  <table class="table" border="1">
+    <tr *ngFor ="let resInfo of oldResInfo">
+      <!--<td>{{resInfo.res_name}}</td>-->
+      <!--<td>{{resInfo.image.image1}}</td>-->
+      <!--<td>{{resInfo.image.image2}}</td>-->
+
+      <td>{{resInfo.name}}</td>
+      <td>{{resInfo.category}}</td>
+      <td>{{resInfo.theme}}</td>
+      <td>{{resInfo.time}}</td>
+      <td>{{resInfo.phone}}</td>
+      <td>{{resInfo.location}}</td>
+      <td>{{resInfo.latitude}}</td>
+      <td>{{resInfo.longitude}}</td>
+      <td>{{resInfo.res_image}}</td>
+      <td>{{resInfo.res_image2}}</td>
+    </tr>
+  </table>
+
+  <div id="foot"><br><br><br>
+    Angular4 & Firebase <br>
+    sunpil hwnag, sunpil13@korea.ca.kr, 010-2715-1024
+  </div>
+
+</body>

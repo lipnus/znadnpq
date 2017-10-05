@@ -1,0 +1,148 @@
+/*전체*/
+body {
+  margin: 6em;
+  background-color:#EBEBEB;
+}
+
+* {
+  font-family: 'Raleway';
+}
+
+#btn-confirm {
+  background:#4267B2;
+  color:white;
+  padding: 1.2em;
+  width:300px;
+  text-align:center;
+  font-size:1.2em;
+  margin-bottom: 30px;
+  cursor:pointer;
+}
+
+
+#btn-cancel {
+  background:#565559;
+  color:white;
+  padding: 1.2em;
+  width:300px;
+  text-align:center;
+  font-size:1.2em;
+  margin-bottom: 30px;
+  cursor:pointer;
+}
+
+
+input#message {
+  background:none;
+  border:none;
+  border-bottom: 1px solid #4C4C4C;
+  outline:none;
+  box-shadow:none;
+  color: white;
+  font-size:1.6em;
+  font-weight:300;
+  margin-bottom: 3em;
+  padding:1.2em 0;
+}
+
+
+.review-container {
+  display:block;
+  opacity: .8;
+  width:100%;
+}
+
+
+
+
+
+.menuinfo {
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+
+
+#category-text{
+  margin-top: 25px;
+}
+
+#btn-box{
+  margin-top: 80px;
+  text-align:center;
+}
+
+.review-box {
+  background:#323035;
+  height: 60px;
+  padding:10px;
+  color:white;
+}
+
+
+.menu-count{
+  margin-left: 10px;
+  background:#323035;
+  color:white;
+  float: left;
+  margin-top: 8px;
+  width: 3%;
+}
+
+
+.menu-input-title{
+  background:none;
+  border:none;
+  outline:none;
+  box-shadow:none;
+  color: white;
+  width: 22%;
+  float: left;
+  font-size:1.2em;
+}
+
+
+.menu-input{
+  background:none;
+  border:none;
+  outline:none;
+  box-shadow:none;
+  color: white;
+  width: 10%;
+  float: left;
+}
+
+
+.menu-input-category{
+  margin-left: 50px;
+  background:none;
+  border:none;
+  outline:none;
+  box-shadow:none;
+  color: white;
+  width: 20%;
+  float: left;
+}
+
+
+.menu-btn{
+  float: right;
+  width: 3%;
+  height: 40px;
+  user-focus: false;
+  margin-left: 10px;
+
+  background:#101010;
+  color:white;
+  text-align:center;
+  font-size:0.7em;
+  cursor:pointer;
+}
+
+
+#menu-num{
+  text-align:center;
+  float: left;
+  margin-right: 10px;
+}
+
+

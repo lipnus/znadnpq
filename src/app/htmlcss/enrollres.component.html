@@ -1,0 +1,198 @@
+
+<html>
+<head>
+  <!--[Bootstrap] -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+
+<article class="container" *ngIf="(user | async)?.uid">
+
+  <div class="col-md-12">
+
+    <div class="page-header">
+      <h1>신규등록 <small>Restaurant</small></h1>
+    </div>
+
+    <!--식당이름 검색-->
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-3 control-label" >식당이름</label>
+        <div class="col-sm-6">
+          <input input type="text" class="form-control" name="res_name" (change)="resNameCheck()"  [(ngModel)]="resInfo.res_name"/>
+        </div>
+
+        <div class="enrollNo" *ngIf="resNameOverlap" #elseBlock>이미 등록되어 있습니다</div>
+        <div class="enrollOk" *ngIf="!resNameOverlap && resInfo.res_name!=''" #elseBlock>등록가능한 이름입니다</div>
+        <div class="enrollNo" *ngIf="!resNameOverlap && resInfo.res_name==''" #elseBlock>식당이름을 입력해주세요</div>
+
+      </div>
+
+      <!--카테고리-->
+      <div class="form-group">
+        <label class="col-sm-3 control-label" >카테고리</label>
+        <div class="col-sm-6">
+          <select class="form-control" name="category" [(ngModel)]="resInfo.res_category">
+            <option>한식</option>
+            <option>양식</option>
+            <option>중식</option>
+            <option>일식</option>
+            <option>분식</option>
+            <option>세계식당</option>
+            <option>무한리필</option>
+            <option>카페</option>
+            <option>치킨</option>
+            <option>고기</option>
+            <option>술</option>
+            <option>학식</option>
+            <option>횟집</option>
+
+          </select>
+        </div>
+      </div>
+
+      <!--테마-->
+      <div class="form-group">
+        <label class="col-sm-3 control-label" >테마</label>
+        <div class="form-horizontal">
+          <div class ="col-sm-2">
+            <div class="chk_box"><label ><input type="checkbox" name="a" [(ngModel)]="resTheme.withJunior"> 후배밥약</label></div>
+            <div class="chk_box"><label ><input type="checkbox" name="b" [(ngModel)]="resTheme.eatSolo">  혼밥러</label></div>
+            <div class="chk_box"><label ><input type="checkbox" name="c" [(ngModel)]="resTheme.love"> 썸&연인</label></div>
+            <div class="chk_box"><label ><input type="checkbox" name="d" [(ngModel)]="resTheme.brother"> 브로맨스</label></div>
+            <div class="chk_box"><label ><input type="checkbox" name="e" [(ngModel)]="resTheme.sister"> 시스터즈</label></div>
+          </div>
+          <div class ="col-sm-2">
+            <div class="chk_box"><label ><input type="checkbox"  name="f" [(ngModel)]="resTheme.run"> 달려보자</label></div>
+            <div class="chk_box"><label ><input type="checkbox"  name="g" [(ngModel)]="resTheme.afterParty"> 뒷풀이</label></div>
+            <div class="chk_box"><label ><input type="checkbox"  name="h" [(ngModel)]="resTheme.feelSoGood"> 알딸딸</label></div>
+            <div class="chk_box"><label ><input type="checkbox"  name="i" [(ngModel)]="resTheme.homeRice"> 집밥</label></div>
+            <div class="chk_box"><label ><input type="checkbox"  name="j" [(ngModel)]="resTheme.wellBeing"> 웰빙</label></div>
+          </div>
+          <div class ="col-sm-2">
+            <div class="chk_box"><label ><input type="checkbox" name="k"  [(ngModel)]="resTheme.study"> 공부</label></div>
+            <div class="chk_box"><label ><input type="checkbox" name="l"  [(ngModel)]="resTheme.teamPlay"> 팀플</label></div>
+            <div class="chk_box"><label ><input type="checkbox" name="m"  [(ngModel)]="resTheme.dessert"> 디저트</label></div>
+            <div class="chk_box"><label ><input type="checkbox" name="n"  [(ngModel)]="resTheme.brunch"> 브런치</label></div>
+            <div class="chk_box"><label ><input type="checkbox" name="o"  [(ngModel)]="resTheme.nightMeal"> 야식</label></div>
+          </div>
+        </div>
+      </div>
+
+      <!--영업시간-->
+      <div class="form-group">
+        <label class="col-sm-3 control-label">영업시간</label>
+        <div class="col-sm-6">
+          <div class="input-group">
+            <input type="tel" class="form-control" id="inputNumbse1r" placeholder="평일" name="time_weekday"  [(ngModel)]="resInfo.res_time.restime_weekday">
+            <span class="input-group-btn">
+                    <button class="btn btn-default" (click)="timeCopy()">복붙<i class="fa fa-mail-forward spaceLeft"></i></button>
+            </span>
+          </div>
+          <input class="form-control" id="inputPassword2" type="text" placeholder="토요일" name="time_sat" [(ngModel)]="resInfo.res_time.restime_sat">
+          <input class="form-control" id="inputPassword3" type="text" placeholder="일요일" name="time_sun" [(ngModel)]="resInfo.res_time.restime_sun">
+          <p class="help-block">8자리숫자 ex)06:00~22:00 = 06002200</p>
+        </div>
+      </div>
+
+      <!--전화번호-->
+      <div class="form-group">
+        <label class="col-sm-3 control-label">전화번호</label>
+        <div class="col-sm-6">
+          <input class="form-control" name="phone" type="text" placeholder="-없이 숫자로만" name="phone" [(ngModel)]="resInfo.phone">
+        </div>
+      </div>
+
+      <!--위치입력-->
+      <div class="form-group">
+        <label class="col-sm-3 control-label" >주소</label>
+        <div class="col-sm-6">
+          <div class="input-group">
+            <input type="tel" class="form-control" id="inputNumbe1r" placeholder="주소" name="location" [(ngModel)]="resInfo.location"/>
+            <span class="input-group-btn">
+                    <button class="btn btn-default" (click)="locationSearch(resInfo.location)">입력<i class="fa fa-mail-forward spaceLeft"></i></button>
+            </span>
+          </div>
+          <input class="form-control" id="inputPassw123ord2" type="text" placeholder="위도(자동입력)" name="latitude" [(ngModel)]="resInfo.latitude" readonly>
+          <input class="form-control" id="inputPasswor2d3" type="text" placeholder="경도(자동입력)" name="longitude" [(ngModel)]="resInfo.longitude" readonly>
+        </div>
+      </div>
+
+      <!--식당추가정보-->
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="inputPasswordCheck">식당 추가정보</label>
+        <div class="col-sm-6">
+          <input class="form-control" id="inputPasswordCheck" type="textarea" placeholder="없으면 빈칸으로" name="extra_info" [(ngModel)]="resInfo.extra_info">
+          <p class="help-block">식당에 추가적인 정보를 기록</p>
+        </div>
+      </div>
+
+      <!--식당외부사진-->
+      <div class="form-group">
+        <label class="col-sm-3 control-label">외부사진</label>
+        <div class="col-sm-6">
+          <div class="input-group" >
+            <input type="file" name="resExFile" (change)="exterImageSelect($event)" accept=".jpg, .png">
+          </div>
+        </div>
+      </div>
+
+      <!--식당내부사진-->
+      <div class="form-group">
+        <label class="col-sm-3 control-label">내부사진</label>
+        <div class="col-sm-6">
+          <div class="input-group">
+            <input type="file" name="resInFile" (change)="interImageSelect($event)" accept=".jpg, .png">
+          </div>
+        </div>
+      </div>
+
+      <!--등록하기, 취소하기-->
+      <div class="form-group">
+        <div class="col-sm-12 text-center">
+          <button class="btn-ok" type="submit" (click)="UploadResInfo($event)">{{resInfo.res_name}} Save<i class="fa fa-check spaceLeft"></i></button>
+          <a routerLink="../reslist"><button class="btn-cancel" type="submit">Cancel<i class="fa fa-times spaceLeft"></i></button></a>
+          <!--<button class="btn btn-danger" type="submit" (click)="backToMain()">테스트<i class="fa fa-times spaceLeft"></i></button>-->
+        </div>
+      </div>
+
+
+      <!--&lt;!&ndash;식당이름&ndash;&gt;-->
+      <!--<p>식당이름:{{resInfo.res_name}}</p>-->
+      <!--<p>시간1:{{resInfo.res_time.restime_weekday}}</p>-->
+      <!--<p>시간2:{{resInfo.res_time.restime_sat}}</p>-->
+      <!--<p>시간3:{{resInfo.res_time.restime_sun}}</p>-->
+      <!--<p>전화:{{resInfo.phone}}</p>-->
+      <!--<p>위치:{{resInfo.location}}</p>-->
+      <!--<p>위도:{{resInfo.latitude}}</p>-->
+      <!--<p>경도:{{resInfo.longitude}}</p>-->
+      <!--<p>추가정보:{{resInfo.extra_info}}</p>-->
+      <!--<p>카테고리:{{resInfo.res_category}}</p>-->
+
+      <!--[식당전체목록]-->
+      <!--<p *ngFor="let item of items | async">식당이름 : {{item.res_name}}</p>-->
+    </form>
+    <hr>
+  </div>
+</article>
+
+
+<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<!--[Bootstrap]-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+
+
+
+

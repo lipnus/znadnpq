@@ -1,0 +1,121 @@
+/*전체*/
+body {
+  margin-top: 6em;
+  margin-left: 12em;
+  margin-right: 12em;
+  background-color:#EBEBEB;
+}
+
+* {
+  font-family: 'Raleway';
+}
+
+
+
+.menuinfo {
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+
+.review-container {
+  display:block;
+  opacity: .8;
+  width:100%;
+}
+
+.review-box {
+  margin-top: 50px;
+  background:#323035;
+  height: 220px;
+  padding:10px;
+  color:white;
+}
+
+.review_img{
+  width: 200px;
+  height: 200px;
+}
+
+.review-box-img{
+  float:left;
+}
+
+.review-box-data{
+  background:#323035;
+  float: left;
+  width: 70%;
+  font-size: 10pt;
+  margin-left: 20px;
+}
+
+.comment-box {
+  margin-top: 5px;
+  background:#323035;
+  height: 60px;
+  padding:10px;
+  font-size: 9pt;
+  color:white;
+}
+
+
+
+
+
+.comment-btn{
+  float: right;
+  width: 5%;
+  height: 40px;
+
+  background:#101010;
+  color:white;
+  text-align:center;
+  font-size:0.7em;
+}
+
+.menu-btn{
+  float: right;
+  width: 5%;
+  height: 40px;
+  user-focus: false;
+  margin-left: 10px;
+
+  background:#101010;
+  color:white;
+  text-align:center;
+  font-size:0.7em;
+  cursor:pointer;
+}
+
+
+#btn-confirm {
+  background:#4267B2;
+  color:white;
+  padding: 1.2em;
+  width:300px;
+  text-align:center;
+  font-size:1.2em;
+  margin-bottom: 30px;
+  cursor:pointer;
+}
+
+
+#btn-cancel {
+  background:#565559;
+  color:white;
+  padding: 1.2em;
+  width:300px;
+  text-align:center;
+  font-size:1.2em;
+  margin-bottom: 30px;
+  cursor:pointer;
+}
+
+#btn-box{
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+

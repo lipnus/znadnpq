@@ -1,0 +1,55 @@
+<!--The ngIf attributes placed on the login and logout buttons check in real time if the user is logged in or not.-->
+
+<!--The input uses the keyup.enter event to call the Send method and send the textfield value.-->
+
+<!--On the p tag we're using *ngFor to iterate through the list of items from the Firebase database. We're showing a pin.svg graphic and the message.-->
+
+<!--Let's also head over to /src/index.html and paste in the following within the <head> tags:-->
+
+
+<body>
+<div class="row columns" >
+
+  <div id="topbox">
+    <h2>KUMCHURK ADMIN SYSTEM</h2>
+    <!--ID: {{user.email}} -->
+  </div>
+
+  <button class="top-btn" [routerLink]="['/resenroll']">enroll</button>
+  <button class="top-btn" [routerLink]="['/reslist']">restaurant</button>
+  <button class="top-btn" [routerLink]="['/userlist']">user</button>
+  <button class="top-btn" (click)="logout()">logout</button>
+
+
+  <input type="text" id="message"  placeholder="Search Restaurant" (change)="resSearch()" (keydown)="resSearch()" [(ngModel)]="resSearchText" />
+  <button class="btn-enroll" (click)="resSearch()">Search</button>
+
+
+
+
+
+  <!--카드나열-->
+  <div id="details-container">
+    <div class="whiteBox" *ngFor="let item of items | async">
+
+      <a class="res-title" [routerLink]="[ '/resmodify',item.res_name ]">{{item.res_name}}</a>
+      <a [routerLink]="[ '/menulist',item.res_name ]"><img src="../../assets/menu4.png"></a>
+
+      <br>
+
+      <div id="deleteBox" (click)="deleteConfirm(item.res_name)"><span id="deleteRes">delete</span></div>
+
+    </div>
+  </div>
+
+  <div id="menuListFoot"><br><br><br>
+    Angular4 & Firebase <br>
+    sunpil hwnag, sunpil13@korea.ac.kr, 010-2715-1024<br>
+    <!--<a routerLink="/move"><button>Firebase Setting</button></a>-->
+  </div>
+
+
+</div>
+
+
+</body>
